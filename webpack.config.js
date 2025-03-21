@@ -1,10 +1,17 @@
-const path = require("path");
+const path = require("path"); // Додано імпорт модуля path
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const fs = require("fs");
+
+const pagesDir = path.resolve(__dirname, "src/pages");
+const pages = fs.existsSync(pagesDir)
+  ? fs.readdirSync(pagesDir).filter((file) => file.endsWith(".html"))
+  : [];
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: "./src/js/index.js",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -20,18 +27,36 @@ module.exports = {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "icons/[name].[hash:8].[ext]",
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: "[contenthash].css" }),
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      inject: true,
+    new CopyWebpackPlugin({
+      patterns: [{ from: "src/static", to: "static" }],
     }),
+    ...pages.map(
+      (page) =>
+        new HtmlWebpackPlugin({
+          filename: page,
+          template: `./src/pages/${page}`,
+        })
+    ),
   ],
   devServer: {
-    static: "./dist",
+    static: path.resolve(__dirname, "dist"),
     hot: true,
     open: true,
+    historyApiFallback: true,
   },
 };

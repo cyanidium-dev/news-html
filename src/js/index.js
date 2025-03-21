@@ -1,3 +1,3 @@
-import "./styles.css";
+import "../css/styles.css";
 
 console.log("Webpack and Tailwind are working!");
