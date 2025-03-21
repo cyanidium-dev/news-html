@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Завантажуємо вміст header.html і вставляємо його в контейнер
-  fetch('/components/header/header.html')
+  fetch('/components/header.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('header-container').innerHTML = data;
