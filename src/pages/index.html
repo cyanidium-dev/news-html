@@ -14,7 +14,7 @@
     <main class="container mt-4 md:mt-6">
       <div class="flex flex-col md:flex-row gap-6 md:gap-3 lg:gap-6">
         <!-- основна інфо -->
-        <section class="flex flex-col gap-6">
+        <section class="flex flex-col gap-6 md:mb-12">
           <div
             class="bg-white flex justify-center items-center py-7 md:py-[37px] w-full rounded-xl md:rounded-lg md:justify-start md:px-[33px]"
           >
@@ -32,7 +32,16 @@
           ></div>
         </section>
         <!-- важливі новини -->
-        <section id="important-news"></section>
+        <div>
+          <section id="important-news"></section>
+          <!-- заглушка з десктопу -->
+          <div class="hidden md:block w-full h-[479px] bg-[#D9D9D9]"></div>
+        </div>
+      </div>
+      <!-- повʼязані новини 1 -->
+      <div class="flex flex-col gap-6 mb-6 md:mb-[59px]">
+        <section id="related-news-invest"></section>
+        <section id="related-news-finance"></section>
       </div>
     </main>
     <div id="footer-container"></div>
