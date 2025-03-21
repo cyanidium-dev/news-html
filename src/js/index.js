@@ -1,3 +1,4 @@
-import "../css/styles.css";
+import '../css/styles.css';
+import './header';
 
-console.log("Webpack and Tailwind are working!");
+console.log('Webpack and Tailwind are working!');

@@ -50,6 +50,7 @@ module.exports = {
         new HtmlWebpackPlugin({
           filename: page,
           template: `./src/pages/${page}`,
+          inject: 'body',
         })
     ),
   ],
