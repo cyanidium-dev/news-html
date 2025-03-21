@@ -38,6 +38,17 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(svg|png|jpe?g|gif|webp)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[name].[hash:8].[ext]',
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -54,6 +65,7 @@ module.exports = {
           filename: page,
           template: `./src/pages/${page}`,
           inject: 'body',
+          scriptLoading: 'defer',
         })
     ),
   ],
