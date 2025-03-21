@@ -43,7 +43,10 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({ filename: '[contenthash].css' }),
     new CopyWebpackPlugin({
-      patterns: [{ from: 'src/static', to: 'static' }],
+      patterns: [
+        { from: 'src/static', to: 'static' },
+        { from: 'src/components', to: 'components' },
+      ],
     }),
     ...pages.map(
       page =>
