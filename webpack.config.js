@@ -1,39 +1,39 @@
-const path = require("path"); // Додано імпорт модуля path
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const fs = require("fs");
+const path = require('path'); // Додано імпорт модуля path
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const fs = require('fs');
 
-const pagesDir = path.resolve(__dirname, "src/pages");
+const pagesDir = path.resolve(__dirname, 'src/pages');
 const pages = fs.existsSync(pagesDir)
-  ? fs.readdirSync(pagesDir).filter((file) => file.endsWith(".html"))
+  ? fs.readdirSync(pagesDir).filter(file => file.endsWith('.html'))
   : [];
 
 module.exports = {
-  mode: "development",
-  entry: "./src/js/index.js",
+  mode: 'development',
+  entry: './src/js/index.js',
   output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'public'),
     clean: true,
   },
   module: {
     rules: [
       {
         test: /\.html$/,
-        use: ["html-loader"],
+        use: ['html-loader'],
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.svg$/,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-              name: "icons/[name].[hash:8].[ext]",
+              name: 'icons/[name].[hash:8].[ext]',
             },
           },
         ],
@@ -41,12 +41,12 @@ module.exports = {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: "[contenthash].css" }),
+    new MiniCssExtractPlugin({ filename: '[contenthash].css' }),
     new CopyWebpackPlugin({
-      patterns: [{ from: "src/static", to: "static" }],
+      patterns: [{ from: 'src/static', to: 'static' }],
     }),
     ...pages.map(
-      (page) =>
+      page =>
         new HtmlWebpackPlugin({
           filename: page,
           template: `./src/pages/${page}`,
@@ -54,7 +54,7 @@ module.exports = {
     ),
   ],
   devServer: {
-    static: path.resolve(__dirname, "dist"),
+    static: path.resolve(__dirname, 'public'),
     hot: true,
     open: true,
     historyApiFallback: true,
