@@ -120,3 +120,19 @@ a {
   font-weight: 500;
   margin-right: 10px;
 }
+
+#burger-icon.open .burger-line:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+#burger-icon.open .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+#burger-icon.open .burger-line:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.burger-line {
+  transition: all 0.3s ease;
+}

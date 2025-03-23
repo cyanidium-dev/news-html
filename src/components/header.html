@@ -1,6 +1,6 @@
 <header class="text-textColor md:bg-white">
   <div
-    class="bg-white flex items-center justify-between pt-[59px] pb-[25px] px-4 md:py-9 xl:pr-[53px] xl:pl-14 max-w-[1440px] mx-auto"
+    class="bg-white flex items-center justify-between pt-[59px] pb-[25px] px-4 md:py-9 xl:pr-[53px] xl:pl-14 max-w-[1440px] mx-auto relative z-30"
   >
     <!-- Лого -->
     <div class="text-2xl font-bold">
@@ -65,158 +65,146 @@
       </div>
 
       <!-- Бургер-меню для мобільних -->
-      <div class="md:hidden flex items-center">
-        <div id="burger-icon" class="cursor-pointer">
-          <svg width="24" height="24">
-            <use href="static/icons/sprite.svg#menu"></use>
-          </svg>
-        </div>
-      </div>
-
-      <!-- Мобільне меню (спочатку приховане) -->
-      <div
-        id="mobile-menu"
-        class="fixed overflow-auto top-0 right-0 w-full h-full bg-white transform translate-x-full transition-transform duration-500 ease-in-out z-50"
-      >
-        <div
-          class="flex justify-between items-center pt-[76px] pl-10 pr-[37px] pb-[111px]"
+      <div class="md:hidden flex items-center mr-2">
+        <button
+          type="button"
+          id="burger-icon"
+          class="cursor-pointer relative w-6 h-6 flex flex-col justify-between"
         >
-          <!-- Лого -->
-          <div class="text-2xl font-bold">
-            <a href="/">
-              <svg width="142" height="24">
-                <use href="static/icons/sprite.svg#logo"></use>
-              </svg>
-            </a>
-          </div>
-
-          <button id="close-menu" class="cursor-pointer">
-            <svg width="41" height="41">
-              <use href="static/icons/sprite.svg#close"></use>
-            </svg>
-          </button>
-        </div>
-
-        <nav class="ml-[33px] mr-[46px]">
-          <ul
-            class="px-2 pb-[148px] w-full text-start text-[20px] font-semibold leading-normal"
-          >
-            <li class="py-4 border-b border-b-borders">
-              <a href="/" class="nav-link hover:text-accent">Головна</a>
-            </li>
-            <li class="py-4 border-b border-b-borders">
-              <a href="/updates.html" class="nav-link hover:text-accent"
-                >Оперативно</a
-              >
-            </li>
-            <li class="py-4 border-b border-b-borders">
-              <a href="/details.html" class="nav-link hover:text-accent"
-                >Детально</a
-              >
-            </li>
-            <li class="py-4 border-b border-b-borders">
-              <a href="/economy" class="nav-link hover:text-accent"
-                >Економіка</a
-              >
-            </li>
-            <li class="py-4 border-b border-b-borders">
-              <a href="/finance" class="nav-link hover:text-accent">Фінанси</a>
-            </li>
-            <li class="py-4">
-              <a href="/startups" class="nav-link hover:text-accent"
-                >Стартапи</a
-              >
-            </li>
-          </ul>
-        </nav>
-
-        <!-- соц мережі -->
-        <ul class="flex justify-center items-center gap-[23px] mb-[240px]">
-          <li>
-            <a
-              href="https://uk-ua.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg
-                width="32"
-                height="32"
-                class="text-accent hover:text-mint transition-colors duration-300"
-              >
-                <use href="static/icons/sprite.svg#facebook"></use>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
-              <svg
-                width="32"
-                height="32"
-                class="text-accent hover:text-mint transition-colors duration-300"
-              >
-                <use href="static/icons/sprite.svg#x"></use>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg
-                width="32"
-                height="32"
-                class="text-accent hover:text-mint transition-colors duration-300"
-              >
-                <use href="static/icons/sprite.svg#instagram"></use></svg
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.threads.net/?hl=uk"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg
-                width="32"
-                height="32"
-                class="text-accent hover:text-mint transition-colors duration-300"
-              >
-                <use href="static/icons/sprite.svg#threads"></use></svg
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://web.telegram.org/k/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg
-                width="32"
-                height="32"
-                class="text-accent hover:text-mint transition-colors duration-300"
-              >
-                <use href="static/icons/sprite.svg#tg"></use></svg
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.viber.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg
-                width="32"
-                height="32"
-                class="text-accent hover:text-mint transition-colors duration-300"
-              >
-                <use href="static/icons/sprite.svg#viber"></use></svg
-            ></a>
-          </li>
-        </ul>
+          <span
+            class="burger-line w-8 h-1 bg-black transition-all duration-300"
+          ></span>
+          <span
+            class="burger-line w-8 h-1 bg-black transition-all duration-300"
+          ></span>
+          <span
+            class="burger-line w-8 h-1 bg-black transition-all duration-300"
+          ></span>
+        </button>
       </div>
     </div>
+  </div>
+  <!-- Мобільне меню (спочатку приховане) -->
+  <div
+    id="mobile-menu"
+    class="fixed overflow-auto top-0 right-0 w-full h-full bg-white transform -translate-y-full transition-transform duration-700 ease-in-out z-20"
+  >
+    <nav class="ml-[33px] mr-[46px]">
+      <ul
+        class="px-2 pb-[148px] w-full text-start text-[20px] font-semibold leading-normal"
+      >
+        <li class="py-4 border-b border-b-borders">
+          <a href="/" class="nav-link hover:text-accent">Головна</a>
+        </li>
+        <li class="py-4 border-b border-b-borders">
+          <a href="/updates.html" class="nav-link hover:text-accent"
+            >Оперативно</a
+          >
+        </li>
+        <li class="py-4 border-b border-b-borders">
+          <a href="/details.html" class="nav-link hover:text-accent"
+            >Детально</a
+          >
+        </li>
+        <li class="py-4 border-b border-b-borders">
+          <a href="/economy" class="nav-link hover:text-accent">Економіка</a>
+        </li>
+        <li class="py-4 border-b border-b-borders">
+          <a href="/finance" class="nav-link hover:text-accent">Фінанси</a>
+        </li>
+        <li class="py-4">
+          <a href="/startups" class="nav-link hover:text-accent">Стартапи</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- соц мережі -->
+    <ul class="flex justify-center items-center gap-[23px] mb-[100px]">
+      <li>
+        <a
+          href="https://uk-ua.facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg
+            width="32"
+            height="32"
+            class="text-accent hover:text-mint transition-colors duration-300"
+          >
+            <use href="static/icons/sprite.svg#facebook"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+          <svg
+            width="32"
+            height="32"
+            class="text-accent hover:text-mint transition-colors duration-300"
+          >
+            <use href="static/icons/sprite.svg#x"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg
+            width="32"
+            height="32"
+            class="text-accent hover:text-mint transition-colors duration-300"
+          >
+            <use href="static/icons/sprite.svg#instagram"></use></svg
+        ></a>
+      </li>
+      <li>
+        <a
+          href="https://www.threads.net/?hl=uk"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg
+            width="32"
+            height="32"
+            class="text-accent hover:text-mint transition-colors duration-300"
+          >
+            <use href="static/icons/sprite.svg#threads"></use></svg
+        ></a>
+      </li>
+      <li>
+        <a
+          href="https://web.telegram.org/k/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg
+            width="32"
+            height="32"
+            class="text-accent hover:text-mint transition-colors duration-300"
+          >
+            <use href="static/icons/sprite.svg#tg"></use></svg
+        ></a>
+      </li>
+      <li>
+        <a
+          href="https://www.viber.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg
+            width="32"
+            height="32"
+            class="text-accent hover:text-mint transition-colors duration-300"
+          >
+            <use href="static/icons/sprite.svg#viber"></use></svg
+        ></a>
+      </li>
+    </ul>
+
+    <section id="theme-tags" class="mx-2 mb-2"></section>
   </div>
   <hr class="h-[1px] w-screen bg-borders" />
   <!-- навігація на моб зі скроллом -->

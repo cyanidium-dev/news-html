@@ -43,22 +43,21 @@ document.addEventListener('DOMContentLoaded', function () {
       // Логіка бургер-меню
       const burgerIcon = document.getElementById('burger-icon');
       const mobileMenu = document.getElementById('mobile-menu');
-      const closeMenu = document.getElementById('close-menu');
 
-      if (burgerIcon && mobileMenu && closeMenu) {
-        burgerIcon.addEventListener('click', function () {
-          mobileMenu.classList.remove('translate-x-full');
-        });
+      function toggleMenu() {
+        const isOpen = mobileMenu.classList.contains('translate-y-[11%]');
 
-        closeMenu.addEventListener('click', function () {
-          mobileMenu.classList.add('translate-x-full');
-        });
+        // Анімація бургера в хрестик
+        burgerIcon.classList.toggle('open', !isOpen);
+        mobileMenu.classList.toggle('translate-y-[11%]', !isOpen);
+        mobileMenu.classList.toggle('-translate-y-full', isOpen);
+      }
 
+      if (burgerIcon && mobileMenu) {
+        burgerIcon.addEventListener('click', toggleMenu);
         // Закриття меню при кліку на будь-яке посилання
         document.querySelectorAll('.mobile-nav-link').forEach(link => {
-          link.addEventListener('click', function () {
-            mobileMenu.classList.add('translate-x-full');
-          });
+          link.addEventListener('click', toggleMenu);
         });
       }
 
