@@ -28,26 +28,18 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'icons/[name].[hash:8].[ext]',
-            },
-          },
-        ],
+        test: /\.(png|jpe?g|gif|webp|svg)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/images/[name][ext]',
+        },
       },
       {
-        test: /\.(svg|png|jpe?g|gif|webp)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'images/[name].[hash:8].[ext]',
-            },
-          },
-        ],
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/fonts/[name][ext]',
+        },
       },
     ],
   },

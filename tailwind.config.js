@@ -42,6 +42,10 @@ module.exports = {
           'clamp(20px, 2.8vw, 24px)',
           { lineHeight: '1.4', fontWeight: '500' },
         ],
+        l: [
+          'clamp(20px, 2.1vw, 28px)',
+          { lineHeight: '1.4', fontWeight: '500' },
+        ],
         lg: [
           'clamp(24px, 4.6vw, 40px)',
           { lineHeight: '1.23', fontWeight: '500' },

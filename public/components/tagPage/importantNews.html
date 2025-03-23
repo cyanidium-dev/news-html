@@ -1,12 +1,8 @@
 <div
   class="rounded-xl p-6 md:py-8 md:px-3 xl:px-9 bg-white border-l-[6px] border-l-mint mb-6 md:mb-[77px] md:border-l-0"
 >
-  <h3 class="font-unbounded md:text-accent text-ml mb-[22px] md:mb-4">
-    Важливі новини
-  </h3>
-  <ul
-    class="flex flex-col gap-3 md:gap-4 md:flex-col-reverse mb-6 md:mb-[46px]"
-  >
+  <h3 class="font-unbounded text-ml mb-[22px] md:mb-4">Важливі новини</h3>
+  <ul class="flex flex-col gap-3 md:gap-4 mb-6 md:mb-[46px]">
     <li
       class="flex flex-col md:flex-col-reverse gap-3 md:gap-2 border-b border-b-borders pb-4"
     >
@@ -53,12 +49,12 @@
   </ul>
 
   <a
-    class="lg:hidden flex h-[34px] justify-center items-center text-accent font-unbounded text-[12px] leading-[1.4]"
-    >Всі новини -></a
-  >
-  <a
     href="#"
-    class="hidden lg:flex w-full bg-accent text-white rounded-lg py-4 font-unbounded text-[14px] leading-[1.4] font-semibold justify-center"
-    >Дивитись всі новини -></a
+    class="flex h-[34px] justify-center items-center text-accent font-unbounded text-[12px] lg:text-[14px] leading-[1.4] md:bg-accent md:text-white md:rounded-lg md:h-[52px] md:font-semibold"
   >
+    <p>Всі новини</p>
+    <svg width="16" height="16" class="text-accent md:text-white ml-1">
+      <use href="static/icons/sprite.svg#arrow-forward"></use>
+    </svg>
+  </a>
 </div>
