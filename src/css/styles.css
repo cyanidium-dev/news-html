@@ -58,6 +58,7 @@
 
 html,
 body {
+  overflow-x: hidden;
   max-width: 100vw;
   height: 100vh;
   font-style: normal;
