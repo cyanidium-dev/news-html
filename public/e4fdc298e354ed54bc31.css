@@ -608,20 +608,38 @@ video {
 .fixed {
   position: fixed;
 }
+.absolute {
+  position: absolute;
+}
 .relative {
   position: relative;
+}
+.left-8 {
+  left: 2rem;
 }
 .right-0 {
   right: 0px;
 }
+.right-\[-60px\] {
+  right: -60px;
+}
 .top-0 {
   top: 0px;
+}
+.top-\[-10px\] {
+  top: -10px;
+}
+.top-\[20\%\] {
+  top: 20%;
 }
 .z-20 {
   z-index: 20;
 }
 .z-30 {
   z-index: 30;
+}
+.z-40 {
+  z-index: 40;
 }
 .mx-1 {
   margin-left: 0.25rem;
@@ -659,6 +677,12 @@ video {
 }
 .mb-6 {
   margin-bottom: 1.5rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
+}
+.mb-9 {
+  margin-bottom: 2.25rem;
 }
 .mb-\[100px\] {
   margin-bottom: 100px;
@@ -741,6 +765,9 @@ video {
 .h-1 {
   height: 0.25rem;
 }
+.h-11 {
+  height: 2.75rem;
+}
 .h-6 {
   height: 1.5rem;
 }
@@ -789,6 +816,9 @@ video {
 .h-\[52px\] {
   height: 52px;
 }
+.h-\[60px\] {
+  height: 60px;
+}
 .h-\[67px\] {
   height: 67px;
 }
@@ -797,6 +827,9 @@ video {
 }
 .h-full {
   height: 100%;
+}
+.min-h-\[266px\] {
+  min-height: 266px;
 }
 .min-h-\[356px\] {
   min-height: 356px;
@@ -840,6 +873,9 @@ video {
 .w-\[264px\] {
   width: 264px;
 }
+.w-\[83vw\] {
+  width: 83vw;
+}
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
@@ -861,6 +897,12 @@ video {
 }
 .max-w-\[68\%\] {
   max-width: 68%;
+}
+.max-w-\[84\%\] {
+  max-width: 84%;
+}
+.max-w-\[871px\] {
+  max-width: 871px;
 }
 .flex-none {
   flex: none;
@@ -939,6 +981,9 @@ video {
 }
 .gap-\[26px\] {
   gap: 26px;
+}
+.gap-\[30px\] {
+  gap: 30px;
 }
 .gap-\[38px\] {
   gap: 38px;
@@ -1147,6 +1192,9 @@ video {
 .pr-0 {
   padding-right: 0px;
 }
+.pr-3 {
+  padding-right: 0.75rem;
+}
 .pr-\[46px\] {
   padding-right: 46px;
 }
@@ -1158,6 +1206,9 @@ video {
 }
 .pt-4 {
   padding-top: 1rem;
+}
+.pt-6 {
+  padding-top: 1.5rem;
 }
 .pt-\[22px\] {
   padding-top: 22px;
@@ -1189,6 +1240,9 @@ video {
 }
 .text-\[14px\] {
   font-size: 14px;
+}
+.text-\[15px\] {
+  font-size: 15px;
 }
 .text-\[16px\] {
   font-size: 16px;
@@ -1537,10 +1591,6 @@ a {
 
 @media (min-width: 768px) {
 
-  .md\:visible {
-    visibility: visible;
-  }
-
   .md\:absolute {
     position: absolute;
   }
@@ -1654,10 +1704,6 @@ a {
     height: 299px;
   }
 
-  .md\:h-\[44px\] {
-    height: 44px;
-  }
-
   .md\:h-\[45px\] {
     height: 45px;
   }
@@ -1680,6 +1726,10 @@ a {
 
   .md\:min-h-\[220px\] {
     min-height: 220px;
+  }
+
+  .md\:min-h-\[245px\] {
+    min-height: 245px;
   }
 
   .md\:min-h-\[397px\] {

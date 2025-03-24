@@ -22,28 +22,53 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      // Логіка для пошуку
+      // // Логіка для пошуку
+      // const searchIcon = document.getElementById('search-icon');
+      // const searchInput = document.getElementById('search-input');
+
+      // function updateSearchVisibility() {
+      //   if (window.innerWidth > 768) {
+      //     searchInput?.classList.remove('hidden'); // Завжди показуємо інпут
+      //   } else {
+      //     searchInput?.classList.add('hidden'); // Ховаємо інпут на мобільних
+      //   }
+      // }
+
+      // if (searchIcon && searchInput) {
+      //   searchIcon.addEventListener('click', function () {
+      //     if (window.innerWidth <= 768) {
+      //       searchInput.classList.toggle('hidden'); // Показати/сховати на моб
+      //       searchInput.focus(); // Фокус при відкритті
+      //     }
+      //   });
+
+      //   updateSearchVisibility();
+      //   window.addEventListener('resize', updateSearchVisibility);
+      // }
+
       const searchIcon = document.getElementById('search-icon');
       const searchInput = document.getElementById('search-input');
+      const closeIcon = document.getElementById('close-icon');
+      const searchContainer = document.getElementById('search-container');
 
-      function updateSearchVisibility() {
-        if (window.innerWidth > 768) {
-          searchInput?.classList.remove('hidden'); // Завжди показуємо інпут
-        } else {
-          searchInput?.classList.add('hidden'); // Ховаємо інпут на мобільних
-        }
+      // Функція для відкриття пошукового контейнера
+      if (searchIcon) {
+        searchIcon.addEventListener('click', function () {
+          searchContainer.classList.remove('hidden'); // Показуємо контейнер
+          searchInput.classList.remove('hidden'); // Показуємо інпут
+          searchInput.focus(); // Фокус на інпут
+          closeIcon.classList.remove('hidden'); // Показуємо хрестик
+        });
       }
 
-      if (searchIcon && searchInput) {
-        searchIcon.addEventListener('click', function () {
-          if (window.innerWidth <= 768) {
-            searchInput.classList.toggle('hidden'); // Показати/сховати на моб
-            searchInput.focus(); // Фокус при відкритті
-          }
+      // Функція для закриття пошукового контейнера
+      if (closeIcon) {
+        closeIcon.addEventListener('click', function () {
+          searchInput.value = ''; // Очищаємо введене
+          searchContainer.classList.add('hidden'); // Ховаємо контейнер
+          searchInput.classList.add('hidden'); // Ховаємо інпут
+          closeIcon.classList.add('hidden'); // Ховаємо хрестик
         });
-
-        updateSearchVisibility();
-        window.addEventListener('resize', updateSearchVisibility);
       }
 
       // Логіка бургер-меню

@@ -47,13 +47,12 @@
 
     <div class="flex gap-6">
       <!-- Інпут для пошуку -->
-      <div class="relative flex">
-        <!-- Інпут для пошуку -->
+      <div class="relative flex w-full">
+        <!-- Інпут для пошуку desk -->
         <input
-          id="search-input"
           type="text"
           placeholder="Пошук"
-          class="hidden h-6 md:visible md:w-[106px] lg:w-[150px] xl:w-[203px] md:h-[44px] text-xxs md:text-[15px] font-medium leading-normal px-3 py-[10px] rounded-lg bg-bg text-black placeholder:hidden placeholder-black placeholder-opacity-100 outline-none"
+          class="hidden h-11 md:block md:w-[106px] lg:w-[150px] xl:w-[203px] md:text-[15px] font-medium leading-normal px-3 py-[10px] rounded-lg bg-bg text-black placeholder:hidden placeholder-black placeholder-opacity-100 outline-none"
         />
         <!-- Іконка лупи -->
         <div
@@ -63,6 +62,27 @@
           <svg width="24" height="24">
             <use href="static/icons/sprite.svg#search"></use>
           </svg>
+        </div>
+
+        <!-- Іконка хрестика (прихована за замовчуванням) -->
+        <div
+          id="search-container"
+          class="hidden w-screen h-[60px] bg-white absolute top-[-10px] right-[-60px] z-40"
+        >
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Пошук"
+            class="hidden absolute h-11 left-8 w-[83vw] text-[15px] font-medium leading-normal px-3 py-[10px] rounded-lg bg-bg text-black placeholder:hidden placeholder-black placeholder-opacity-100 outline-none"
+          />
+          <div
+            class="items-center absolute top-[20%] right-0 pr-3 cursor-pointer hidden"
+            id="close-icon"
+          >
+            <svg width="24" height="24">
+              <use href="static/icons/sprite.svg#close"></use>
+            </svg>
+          </div>
         </div>
       </div>
 
