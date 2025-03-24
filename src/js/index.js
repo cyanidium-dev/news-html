@@ -13,5 +13,8 @@ import './socials';
 import './main/lastNews';
 import './main/exchangeForecasts';
 import './themeTags';
+import './category/mostInteresting';
+import './category/allMaterialsCategory';
+import './category/columnsCategory';
 
 console.log('Webpack and Tailwind are working!');
