@@ -1,12 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
-  fetch('./components/themeTags.html')
-    .then(response => response.text())
-    .then(data => {
-      const themeTagsElement = document.getElementById('theme-tags');
+  loadtagElement('theme-tags');
 
-      if (themeTagsElement) {
-        themeTagsElement.innerHTML = data;
-      }
-    })
-    .catch(error => console.error('Error loading lastNews:', error));
+  const observer = new MutationObserver(() => {
+    console.log('Mutation detected');
+    const mobElement = document.getElementById('theme-tags-mob');
+    if (mobElement) {
+      loadtagElement('theme-tags-mob');
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
 });
+
+function loadtagElement(elementId) {
+  const element = document.getElementById(elementId);
+  if (element) {
+    loadtags(element);
+  }
+}
+
+async function loadtags(targetElement) {
+  try {
+    const response = await fetch('./components/themeTags.html');
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.text();
+    targetElement.innerHTML = data;
+  } catch (error) {
+    console.error('Error loading tags:', error);
+  }
+}

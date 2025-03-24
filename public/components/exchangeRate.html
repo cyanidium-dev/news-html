@@ -1,0 +1,88 @@
+<div
+  class="mx-2 pl-2 pr-[6px] py-[7.5px] bg-white rounded-xl flex justify-center items-center"
+>
+  <!-- Контент для міжбанку -->
+  <div
+    id="mono-div"
+    class="transition-all duration-300 flex gap-1 xl:gap-[11px] justify-center items-center"
+  >
+    <p class="text-black text-xs">Міжбанк</p>
+    <p class="text-[10px] s:text-xs s:font-normal">
+      <span
+        class="inline-block text-center s:w-[18px] font-semibold text-accent"
+        >$</span
+      >41.35 / 41.38
+    </p>
+    <svg
+      class="arrow-icon text-[#3C347F] cursor-pointer transform transition-all duration-300"
+      width="24"
+      height="24"
+    >
+      <use href="static/icons/sprite.svg#arrow"></use>
+    </svg>
+
+    <div class="h-[18px] w-[1px] bg-borders"></div>
+    <p class="text-[10px] s:text-xs s:font-normal">
+      <span
+        class="inline-block text-center s:w-[18px] font-semibold text-accent"
+        >€</span
+      >41.35 / 41.38
+    </p>
+    <svg
+      class="arrow-icon text-[#3C347F] cursor-pointer transform transition-all duration-300"
+      width="24"
+      height="24"
+    >
+      <use href="static/icons/sprite.svg#arrow"></use>
+    </svg>
+  </div>
+
+  <p class="hidden md:flex mx-4 text-[20px]">·</p>
+
+  <!-- Контент для НБУ -->
+  <div
+    id="nbu-div"
+    class="transition-all duration-300 hidden md:flex gap-1 xl:gap-[11px] justify-center items-center"
+  >
+    <p class="text-black text-xs">НБУ</p>
+    <p class="text-[10px] s:text-xs s:font-normal">
+      <span
+        class="inline-block text-center s:w-[18px] font-semibold text-accent"
+        >$</span
+      >41.35 / 41.38
+    </p>
+    <svg
+      class="arrow-icon text-[#3C347F] cursor-pointer transform transition-all duration-300"
+      width="24"
+      height="24"
+    >
+      <use href="static/icons/sprite.svg#arrow"></use>
+    </svg>
+
+    <div class="h-[18px] w-[1px] bg-borders"></div>
+    <p class="text-[10px] s:text-xs s:font-normal">
+      <span
+        class="inline-block text-center s:w-[18px] font-semibold text-accent"
+        >€</span
+      >41.35 / 41.38
+    </p>
+    <svg
+      class="arrow-icon text-[#3C347F] cursor-pointer transform transition-all duration-300"
+      width="24"
+      height="24"
+    >
+      <use href="static/icons/sprite.svg#arrow"></use>
+    </svg>
+  </div>
+
+  <!-- стрілка,що міняє міжбанк на нбу (моб)-->
+
+  <div
+    id="toggle-icon"
+    class="md:hidden ml-auto cursor-pointer transform transition-all duration-300"
+  >
+    <svg width="24" height="24">
+      <use href="static/icons/sprite.svg#arrow-right"></use>
+    </svg>
+  </div>
+</div>

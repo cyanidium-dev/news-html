@@ -1,9 +1,18 @@
+import './themeTags';
+import './exchangeRate';
+
 document.addEventListener('DOMContentLoaded', function () {
-  // Завантажуємо вміст header.html і вставляємо його в контейнер
+  const headerContainer = document.getElementById('header-container');
+
+  if (!headerContainer) {
+    console.warn('Header container not found.');
+    return;
+  }
+
   fetch('./components/header.html')
     .then(response => response.text())
     .then(data => {
-      document.getElementById('header-container').innerHTML = data;
+      headerContainer.innerHTML = data;
 
       // Обробка навігаційних посилань
       const links = document.querySelectorAll('.nav-link');
@@ -19,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       function updateSearchVisibility() {
         if (window.innerWidth > 768) {
-          searchInput.classList.remove('hidden'); // Завжди показуємо інпут
+          searchInput?.classList.remove('hidden'); // Завжди показуємо інпут
         } else {
-          searchInput.classList.add('hidden'); // Ховаємо інпут на мобільних
+          searchInput?.classList.add('hidden'); // Ховаємо інпут на мобільних
         }
       }
 
@@ -33,10 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         });
 
-        // Виконуємо перевірку при завантаженні
         updateSearchVisibility();
-
-        // Перевіряємо розмір екрану при зміні ширини вікна
         window.addEventListener('resize', updateSearchVisibility);
       }
 
@@ -45,23 +51,23 @@ document.addEventListener('DOMContentLoaded', function () {
       const mobileMenu = document.getElementById('mobile-menu');
 
       function toggleMenu() {
-        const isOpen = mobileMenu.classList.contains('translate-y-[11%]');
+        const isOpen = mobileMenu?.classList.contains('translate-y-[11%]');
 
-        // Анімація бургера в хрестик
-        burgerIcon.classList.toggle('open', !isOpen);
-        mobileMenu.classList.toggle('translate-y-[11%]', !isOpen);
-        mobileMenu.classList.toggle('-translate-y-full', isOpen);
+        burgerIcon?.classList.toggle('open', !isOpen);
+        mobileMenu?.classList.toggle('translate-y-[11%]', !isOpen);
+        mobileMenu?.classList.toggle('-translate-y-full', isOpen);
+
+        document.body.style.overflow = isOpen ? '' : 'hidden';
       }
 
       if (burgerIcon && mobileMenu) {
         burgerIcon.addEventListener('click', toggleMenu);
-        // Закриття меню при кліку на будь-яке посилання
         document.querySelectorAll('.mobile-nav-link').forEach(link => {
           link.addEventListener('click', toggleMenu);
         });
       }
 
-      // обертання стрілки
+      // Обертання стрілки
       const arrows = document.querySelectorAll('.arrow-icon');
       arrows.forEach(arrow => {
         arrow.addEventListener('click', function () {
@@ -70,26 +76,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       });
 
-      // зміна міжбанку на нбу (моб)
+      // Зміна міжбанку на НБУ (моб)
       const monoDiv = document.getElementById('mono-div');
       const nbuDiv = document.getElementById('nbu-div');
       const toggleIcon = document.getElementById('toggle-icon');
 
-      if (window.innerWidth <= 768) {
-        // Додаємо обробник події на клік для стрілки
+      if (window.innerWidth <= 768 && toggleIcon && monoDiv && nbuDiv) {
         toggleIcon.addEventListener('click', function () {
-          // Якщо monoDiv видимий, приховуємо його та показуємо nbuDiv
-          if (monoDiv.classList.contains('hidden')) {
-            monoDiv.classList.remove('hidden');
-            nbuDiv.classList.add('hidden');
-            toggleIcon.classList.toggle('rotate-180');
-          } else {
-            // Інакше робимо навпаки
-            monoDiv.classList.add('hidden');
-            nbuDiv.classList.remove('hidden');
-            nbuDiv.classList.add('flex');
-            toggleIcon.classList.toggle('rotate-180');
-          }
+          monoDiv.classList.toggle('hidden');
+          nbuDiv.classList.toggle('hidden');
+          nbuDiv.classList.toggle('flex');
+          toggleIcon.classList.toggle('rotate-180');
         });
       }
     })
