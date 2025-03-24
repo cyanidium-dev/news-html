@@ -1,14 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const observer = new MutationObserver(mutationsList => {
+  const observer = new MutationObserver(async mutationsList => {
     const interestingElement = document.getElementById('interesting');
 
     if (interestingElement) {
-      fetch('./components/tagPage/interesting.html')
-        .then(response => response.text())
-        .then(data => {
-          interestingElement.innerHTML = data;
-        })
-        .catch(error => console.error('Error loading interesting:', error));
+      try {
+        const response = await fetch('./components/tagPage/interesting.html');
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.text();
+        interestingElement.innerHTML = data;
+      } catch (error) {
+        console.error('Error loading interesting:', error);
+      }
 
       observer.disconnect();
     }

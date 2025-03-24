@@ -1,51 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
-  waitForElement('socialsMain', loadSocialElement);
+  loadtagElement('socialsMain');
 
-  const observer = new MutationObserver(mutations => {
-    for (let mutation of mutations) {
-      if ([...mutation.addedNodes].some(node => node.id === 'socials')) {
-        loadSocialElement('socials');
-      }
+  const observer = new MutationObserver(() => {
+    console.log('Mutation detected');
+    const mobElement = document.getElementById('socials');
+    if (mobElement && !mobElement.innerHTML) {
+      loadtagElement('socials');
     }
   });
 
   observer.observe(document.body, { childList: true, subtree: true });
 });
 
-function loadSocialElement(elementId) {
+function loadtagElement(elementId) {
   const element = document.getElementById(elementId);
-  if (element) {
-    loadSocials(element);
+  if (element && !element.innerHTML) {
+    loadtags(element);
   }
 }
 
-function loadSocials(targetElement) {
-  fetch('./components/socials.html')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.text();
-    })
-    .then(data => {
-      targetElement.innerHTML = data;
-    })
-    .catch(error => console.error('Error loading socials:', error));
-}
-
-// Функція для очікування появи елемента в DOM
-function waitForElement(id, callback) {
-  const element = document.getElementById(id);
-  if (element) {
-    callback(id);
-    return;
-  }
-  const observer = new MutationObserver(() => {
-    const element = document.getElementById(id);
-    if (element) {
-      observer.disconnect();
-      callback(id);
+async function loadtags(targetElement) {
+  try {
+    const response = await fetch('./components/socials.html');
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
-  });
-  observer.observe(document.body, { childList: true, subtree: true });
+    const data = await response.text();
+    targetElement.innerHTML = data;
+  } catch (error) {
+    console.error('Error loading socials:', error);
+  }
 }

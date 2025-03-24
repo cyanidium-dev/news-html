@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const observer = new MutationObserver(() => {
     console.log('Mutation detected');
     const mobElement = document.getElementById('theme-tags-mob');
-    if (mobElement) {
+    if (mobElement && !mobElement.innerHTML) {
       loadtagElement('theme-tags-mob');
     }
   });
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function loadtagElement(elementId) {
   const element = document.getElementById(elementId);
-  if (element) {
+  if (element && !element.innerHTML) {
     loadtags(element);
   }
 }
