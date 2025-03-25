@@ -59,30 +59,26 @@
           class="flex items-center md:absolute md:inset-y-0 md:right-0 md:pr-3 cursor-pointer"
           id="search-icon"
         >
-          <svg width="24" height="24">
+          <svg width="32" height="32">
             <use href="static/icons/sprite.svg#search"></use>
           </svg>
         </div>
-
-        <!-- Іконка хрестика (прихована за замовчуванням) -->
-        <div
-          id="search-container"
-          class="hidden w-screen h-[60px] bg-white absolute top-[-10px] right-[-60px] z-40"
-        >
-          <input
-            id="search-input"
-            type="text"
-            placeholder="Пошук"
-            class="hidden absolute h-11 left-8 w-[83vw] text-[15px] font-medium leading-normal px-3 py-[10px] rounded-lg bg-bg text-black placeholder:hidden placeholder-black placeholder-opacity-100 outline-none"
-          />
-          <div
-            class="items-center absolute top-[20%] right-0 pr-3 cursor-pointer hidden"
-            id="close-icon"
-          >
-            <svg width="24" height="24">
-              <use href="static/icons/sprite.svg#close"></use>
-            </svg>
-          </div>
+      </div>
+      <!-- пошук на моб -->
+      <div
+        id="search-container"
+        class="h-[116px] bg-white absolute z-40 overflow-auto top-0 right-0 w-full transform -translate-y-full transition-transform duration-700 ease-in-out flex justify-between items-center pb-[25px] pt-[59px] px-4 md:hidden"
+      >
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Пошук"
+          class="h-11 text-[15px] font-medium leading-normal px-3 py-[10px] rounded-lg bg-bg text-black placeholder:hidden placeholder-black placeholder-opacity-100 outline-none w-[84%]"
+        />
+        <div class="items-center pr-3 cursor-pointer" id="close-icon">
+          <svg width="24" height="24">
+            <use href="static/icons/sprite.svg#close"></use>
+          </svg>
         </div>
       </div>
 
@@ -109,41 +105,41 @@
   <!-- Мобільне меню (спочатку приховане) -->
   <div
     id="mobile-menu"
-    class="fixed overflow-auto top-0 right-0 w-full h-full bg-white transform -translate-y-full transition-transform duration-700 ease-in-out z-20 mb-10"
+    class="fixed overflow-auto top-0 right-0 w-full h-full bg-white transform -translate-y-full transition-transform duration-700 ease-in-out z-20 mb-10 flex flex-col justify-between gap-10"
   >
-    <nav class="ml-[33px] mr-[46px]">
-      <ul
-        class="px-2 pb-[148px] w-full text-start text-[20px] font-semibold leading-normal"
-      >
+    <nav class="mt-4">
+      <ul class="w-full text-start text-[20px] font-semibold leading-normal">
         <li class="py-4 border-b border-b-borders">
-          <a href="/" class="nav-link hover:text-accent">Головна</a>
+          <a href="/" class="nav-link mx-4 hover:text-accent">Головна</a>
         </li>
         <li class="py-4 border-b border-b-borders">
-          <a href="/updates.html" class="nav-link hover:text-accent"
+          <a href="/updates.html" class="nav-link mx-4 hover:text-accent"
             >Оперативно</a
           >
         </li>
         <li class="py-4 border-b border-b-borders">
-          <a href="/details.html" class="nav-link hover:text-accent"
+          <a href="/details.html" class="nav-link mx-4 hover:text-accent"
             >Детально</a
           >
         </li>
         <li class="py-4 border-b border-b-borders">
-          <a href="/category.html" class="nav-link hover:text-accent"
+          <a href="/category.html" class="nav-link mx-4 hover:text-accent"
             >Економіка</a
           >
         </li>
         <li class="py-4 border-b border-b-borders">
-          <a href="/finance" class="nav-link hover:text-accent">Фінанси</a>
+          <a href="/finance" class="nav-link mx-4 hover:text-accent">Фінанси</a>
         </li>
-        <li class="py-4">
-          <a href="/startups" class="nav-link hover:text-accent">Стартапи</a>
+        <li class="pt-4">
+          <a href="/startups" class="nav-link mx-4 hover:text-accent"
+            >Стартапи</a
+          >
         </li>
       </ul>
     </nav>
 
     <!-- соц мережі -->
-    <ul class="flex justify-center items-center gap-[23px] mb-[100px]">
+    <ul class="flex justify-center items-center gap-[23px]">
       <li>
         <a
           href="https://uk-ua.facebook.com"
@@ -230,7 +226,7 @@
 
     <section id="theme-tags-mob" class="mx-2 mb-[180px]"></section>
   </div>
-  <hr class="h-[1px] w-screen bg-borders" />
+  <hr class="h-[1px] w-full bg-borders" />
   <!-- навігація на моб зі скроллом -->
   <nav class="bg-white w-full overflow-x-auto py-[10px] mb-4 md:hidden">
     <ul class="flex gap-[10px] text-neutral text-s ml-2 sm:justify-center">
