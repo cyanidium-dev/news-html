@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(data => {
       headerContainer.innerHTML = data;
 
-      // Обробка навігаційних посилань
+      // Обробка активного посилання в навігації
       const links = document.querySelectorAll('.nav-link');
       links.forEach(link => {
         if (window.location.pathname === link.getAttribute('href')) {
@@ -22,64 +22,57 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      // // Логіка для пошуку
-      // const searchIcon = document.getElementById('search-icon');
-      // const searchInput = document.getElementById('search-input');
-
-      // function updateSearchVisibility() {
-      //   if (window.innerWidth > 768) {
-      //     searchInput?.classList.remove('hidden'); // Завжди показуємо інпут
-      //   } else {
-      //     searchInput?.classList.add('hidden'); // Ховаємо інпут на мобільних
-      //   }
-      // }
-
-      // if (searchIcon && searchInput) {
-      //   searchIcon.addEventListener('click', function () {
-      //     if (window.innerWidth <= 768) {
-      //       searchInput.classList.toggle('hidden'); // Показати/сховати на моб
-      //       searchInput.focus(); // Фокус при відкритті
-      //     }
-      //   });
-
-      //   updateSearchVisibility();
-      //   window.addEventListener('resize', updateSearchVisibility);
-      // }
-
+      // Логіка пошуку
       const searchIcon = document.getElementById('search-icon');
       const searchInput = document.getElementById('search-input');
       const closeIcon = document.getElementById('close-icon');
       const searchContainer = document.getElementById('search-container');
 
-      // Функція для відкриття пошукового контейнера
-      if (searchIcon) {
-        searchIcon.addEventListener('click', function () {
-          searchContainer.classList.remove('hidden'); // Показуємо контейнер
-          searchInput.classList.remove('hidden'); // Показуємо інпут
-          searchInput.focus(); // Фокус на інпут
-          closeIcon.classList.remove('hidden'); // Показуємо хрестик
-        });
+      function openSearch() {
+        searchContainer.classList.remove('-translate-y-full'); // Відкриваємо пошук
+        searchContainer.classList.remove('hidden');
+        searchInput.focus();
       }
 
-      // Функція для закриття пошукового контейнера
-      if (closeIcon) {
-        closeIcon.addEventListener('click', function () {
-          searchInput.value = ''; // Очищаємо введене
-          searchContainer.classList.add('hidden'); // Ховаємо контейнер
-          searchInput.classList.add('hidden'); // Ховаємо інпут
-          closeIcon.classList.add('hidden'); // Ховаємо хрестик
-        });
+      function closeSearch() {
+        searchInput.value = ''; // Очищуємо введене значення
+        searchContainer.classList.add('-translate-y-full'); //
       }
+
+      if (searchIcon) {
+        searchIcon.addEventListener('click', openSearch);
+      }
+
+      if (closeIcon) {
+        closeIcon.addEventListener('click', closeSearch);
+      }
+
+      // Закриття при кліку поза пошуком
+      document.addEventListener('click', function (event) {
+        if (
+          !searchContainer.contains(event.target) &&
+          !searchIcon.contains(event.target)
+        ) {
+          closeSearch();
+        }
+      });
+
+      // Закриття при натисканні Escape
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          closeSearch();
+        }
+      });
 
       // Логіка бургер-меню
       const burgerIcon = document.getElementById('burger-icon');
       const mobileMenu = document.getElementById('mobile-menu');
 
       function toggleMenu() {
-        const isOpen = mobileMenu?.classList.contains('translate-y-[11%]');
+        const isOpen = mobileMenu?.classList.contains('translate-y-[12%]');
 
         burgerIcon?.classList.toggle('open', !isOpen);
-        mobileMenu?.classList.toggle('translate-y-[11%]', !isOpen);
+        mobileMenu?.classList.toggle('translate-y-[12%]', !isOpen);
         mobileMenu?.classList.toggle('-translate-y-full', isOpen);
 
         document.body.style.overflow = isOpen ? '' : 'hidden';

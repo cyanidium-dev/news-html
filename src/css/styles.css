@@ -8,6 +8,7 @@
     src: url('../static/fonts/Inter-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -15,6 +16,7 @@
     src: url('../static/fonts/Inter-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -23,6 +25,7 @@
       url('../static/fonts/Inter-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -31,6 +34,7 @@
       url('../static/fonts/Inter-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -39,6 +43,7 @@
       url('../static/fonts/Unbounded-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -47,6 +52,7 @@
       url('../static/fonts/Unbounded-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
   }
 }
 

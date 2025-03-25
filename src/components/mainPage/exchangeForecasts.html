@@ -3,32 +3,35 @@
     <h2 class="text-l font-unbounded">Прогнози курсу</h2>
     <a
       href="#"
-      class="hidden md:flex text-accent font-unbounded text-[14px] font-semibold leading-[1.4] items-center"
+      class="hidden md:flex text-accent font-unbounded text-[14px] font-semibold leading-[1.4] items-cente hover:text-mint transition-colors duration-300"
     >
       <p>Всі</p>
-      <svg width="12" height="12" class="text-accent ml-1">
+      <svg width="12" height="12" class="ml-1">
         <use href="static/icons/sprite.svg#arrow-forward"></use>
       </svg>
     </a>
   </div>
 
   <div class="grid grid-cols-1 lg:grid-cols-2 md:items-stretch gap-4 md:gap-6">
-    <div
-      class="p-5 rounded-xl border border-borders min-h-[390px] md:min-h-full flex flex-col"
-    >
-      <img
-        src="static/images/test.png"
-        alt="зображення новини"
-        width="302"
-        class="w-full h-auto rounded-[4px] mb-3"
-      />
-      <p class="text-m font-unbounded mb-3">
-        Фінанси не поза політикою: яка доля очікує МІБ-банк після санкцій на
-        Порошенка
-      </p>
-      <p class="mt-auto text-accent text-[10px] font-medium leading-[1.2]">
-        18.02.2025
-      </p>
+    <div class="rounded-xl border border-borders min-h-[390px] md:min-h-full">
+      <a
+        href="#"
+        class="flex flex-col h-full p-5 hover:scale-[1.02] transition-transform duration-300 hover:text-darkAccent"
+      >
+        <img
+          src="static/images/test.png"
+          alt="зображення новини"
+          width="302"
+          class="w-full h-auto rounded-[4px] mb-3"
+        />
+        <p class="text-m font-unbounded mb-3">
+          Фінанси не поза політикою: яка доля очікує МІБ-банк після санкцій на
+          Порошенка
+        </p>
+        <p class="mt-auto text-accent text-[10px] font-medium leading-[1.2]">
+          18.02.2025
+        </p>
+      </a>
     </div>
 
     <ul class="flex flex-col gap-4 px-4 md:px-0">
@@ -36,27 +39,36 @@
         <p class="mb-1 text-accent text-[10px] font-medium leading-[1.2]">
           18.02.2025
         </p>
-        <p class="text-black text-m font-normal">
+        <a
+          href="#"
+          class="text-black text-m font-normal hover:text-accent transition-colors duration-300"
+        >
           Зроблено в Україні: гранти для виробників переробної промисловості
-        </p>
+        </a>
       </li>
 
       <li class="pb-4 md:pb-6 border-b border-b-borders">
         <p class="mb-1 text-accent text-[10px] font-medium leading-[1.2]">
           18.02.2025
         </p>
-        <p class="text-black text-m font-normal">
+        <a
+          href="#"
+          class="text-black text-m font-normal hover:text-accent transition-colors duration-300"
+        >
           Зроблено в Україні: гранти для виробників переробної промисловості
-        </p>
+        </a>
       </li>
 
       <li class="pb-4 md:pb-6">
         <p class="mb-1 text-accent text-[10px] font-medium leading-[1.2]">
           18.02.2025
         </p>
-        <p class="text-black text-m font-normal">
+        <a
+          href="#"
+          class="text-black text-m font-normal hover:text-accent transition-colors duration-300"
+        >
           Зроблено в Україні: гранти для виробників переробної промисловості
-        </p>
+        </a>
       </li>
     </ul>
   </div>
