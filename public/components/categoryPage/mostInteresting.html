@@ -1,16 +1,14 @@
 <div class="bg-white rounded-xl p-4 lg:py-8 lg:px-9">
   <h2 class="text-l font-unbounded mb-4 md:mb-[30px]">Найцікавіше</h2>
 
-  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-stretch">
+  <div class="grid grid-cols-1 gap-4 lg:gap-6 md:grid-cols-2 md:items-stretch">
     <!-- Головна картка -->
-    <article
-      class="rounded-xl overflow-hidden relative hover:scale-[1.02] transition-transform duration-300"
-    >
+    <article class="rounded-xl overflow-hidden relative">
       <ul class="flex gap-2 flex-wrap absolute top-5 left-5 z-10">
         <li>
           <a
             href="/tag.html"
-            class="bg-lightAccent text-accent text-xxs px-3 py-1 md:px-2 lg:px-3 rounded-[4px] flex w-fit hover:text-white hover:bg-accent transition-colors duration-300"
+            class="bg-lightAccent text-accent text-xxs px-3 py-1 md:px-2 lg:px-3 rounded-[4px] flex w-fit hover:bg-[#E4E3F5] transition-colors duration-300"
           >
             <p>Економіка</p>
           </a>
@@ -18,7 +16,7 @@
         <li>
           <a
             href="/tag.html"
-            class="bg-lightAccent text-accent text-xxs px-3 py-1 md:px-2 lg:px-3 rounded-[4px] flex w-fit hover:text-white hover:bg-accent transition-colors duration-300"
+            class="bg-lightAccent text-accent text-xxs px-3 py-1 md:px-2 lg:px-3 rounded-[4px] flex w-fit hover:bg-[#E4E3F5] transition-colors duration-300"
           >
             <p>Стартап</p>
           </a>
@@ -26,26 +24,21 @@
         <li>
           <a
             href="/tag.html"
-            class="bg-lightAccent text-accent text-xxs px-3 py-1 md:px-2 lg:px-3 rounded-[4px] flex w-fit hover:text-white hover:bg-accent transition-colors duration-300"
+            class="bg-lightAccent text-accent text-xxs px-3 py-1 md:px-2 lg:px-3 rounded-[4px] flex w-fit hover:bg-[#E4E3F5] transition-colors duration-300"
           >
             <p>Смартфони</p>
           </a>
         </li>
       </ul>
-      <a
-        href="#"
-        class="h-60 p-5 md:h-full rounded-xl block"
-        style="
-          background: linear-gradient(
-              178deg,
-              rgba(0, 0, 0, 0) 1.42%,
-              rgba(0, 0, 0, 0.8) 72.14%
-            ),
-            url('static/images/editors.png') lightgray 50% / cover no-repeat;
-        "
-      >
+      <a href="#" class="editor-article h-60 p-5 md:h-full rounded-xl block">
+        <img
+          src="static/images/editors.png"
+          alt="зображення статті"
+          width="200px"
+          class="absolute top-0 right-0 w-full h-full object-cover"
+        />
         <div class="flex flex-col justify-end h-full">
-          <div class="text-white">
+          <div class="text-white relative z-[3]">
             <h3 class="text-m lg:text-[36px] font-unbounded mb-3 lg:mb-8">
               Безплатний акселератор з виходу на ринок ЄС для підприємців
             </h3>
@@ -55,16 +48,16 @@
       </a>
     </article>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
       <!-- Додаткова картка -->
       <article
-        class="bg-accent rounded-xl overflow-hidden h-60 md:col-span-2 md:h-[283px] relative hover:scale-[1.02] transition-transform duration-300"
+        class="bg-accent rounded-xl overflow-hidden h-60 md:col-span-2 md:h-[283px] relative hover:bg-[#6D5DFF] transition-colors duration-300"
       >
         <ul class="flex gap-2 flex-wrap absolute top-5 left-5 z-10">
           <li>
             <a
               href="/tag.html"
-              class="bg-lightAccent text-accent text-xxs px-3 py-1 md:px-2 lg:px-3 rounded-[4px] flex w-fit hover:text-white hover:bg-accent transition-colors duration-300"
+              class="bg-lightAccent text-accent text-xxs px-3 py-1 md:px-2 lg:px-3 rounded-[4px] flex w-fit hover:bg-[#E4E3F5] transition-colors duration-300"
             >
               <p>Економіка</p>
             </a>
@@ -84,14 +77,12 @@
       </article>
 
       <!-- Маленькі картки -->
-      <article
-        class="rounded-xl overflow-hidden relative hover:scale-[1.02] transition-transform duration-300"
-      >
+      <article class="rounded-xl overflow-hidden relative">
         <ul class="flex gap-2 flex-wrap absolute top-5 left-5 z-10">
           <li>
             <a
               href="/tag.html"
-              class="bg-lightAccent text-accent text-xxs px-3 py-1 md:px-2 lg:px-3 rounded-[4px] flex w-fit hover:text-white hover:bg-accent transition-colors duration-300"
+              class="bg-lightAccent text-accent text-xxs px-3 py-1 md:px-2 lg:px-3 rounded-[4px] flex w-fit hover:bg-[#E4E3F5] transition-colors duration-300"
             >
               <p>Економіка</p>
             </a>
@@ -99,26 +90,21 @@
           <li>
             <a
               href="/tag.html"
-              class="bg-lightAccent text-accent text-xxs px-3 py-1 md:px-2 lg:px-3 rounded-[4px] flex w-fit hover:text-white hover:bg-accent transition-colors duration-300"
+              class="bg-lightAccent text-accent text-xxs px-3 py-1 md:px-2 lg:px-3 rounded-[4px] flex w-fit hover:bg-[#E4E3F5] transition-colors duration-300"
             >
               <p>Стартап</p>
             </a>
           </li>
         </ul>
-        <a
-          href="#"
-          class="h-60 p-5 md:p-2 lg:p-5 block"
-          style="
-            background: linear-gradient(
-                178deg,
-                rgba(0, 0, 0, 0) 1.42%,
-                rgba(0, 0, 0, 0.8) 72.14%
-              ),
-              url('static/images/editors.png') lightgray 50% / cover no-repeat;
-          "
-        >
+        <a href="#" class="h-60 p-5 md:p-2 lg:p-5 block editor-article">
+          <img
+            src="static/images/editors.png"
+            alt="зображення статті"
+            width="200px"
+            class="absolute top-0 right-0 w-full h-full object-cover"
+          />
           <div class="flex flex-col justify-end h-full">
-            <div class="text-white">
+            <div class="text-white relative z-[3]">
               <h3
                 class="text-m font-unbounded mb-3 md:text-[12px] lg:text-[14px] xl:text-[18px]"
               >
@@ -131,33 +117,26 @@
         </a>
       </article>
 
-      <article
-        class="rounded-xl overflow-hidden relative hover:scale-[1.02] transition-transform duration-300"
-      >
+      <article class="rounded-xl overflow-hidden relative">
         <ul class="flex gap-2 flex-wrap absolute top-5 left-5 z-10">
           <li>
             <a
               href="/tag.html"
-              class="bg-lightAccent text-accent text-xxs px-3 py-1 md:px-2 lg:px-3 rounded-[4px] flex w-fit hover:text-white hover:bg-accent transition-colors duration-300"
+              class="bg-lightAccent text-accent text-xxs px-3 py-1 md:px-2 lg:px-3 rounded-[4px] flex w-fit hover:bg-[#E4E3F5] transition-colors duration-300"
             >
               <p>Економіка</p>
             </a>
           </li>
         </ul>
-        <a
-          href="#"
-          class="h-60 p-5 md:p-2 lg:p-5 block"
-          style="
-            background: linear-gradient(
-                178deg,
-                rgba(0, 0, 0, 0) 1.42%,
-                rgba(0, 0, 0, 0.8) 72.14%
-              ),
-              url('static/images/editors.png') lightgray 50% / cover no-repeat;
-          "
-        >
+        <a href="#" class="h-60 p-5 md:p-2 lg:p-5 block editor-article">
+          <img
+            src="static/images/editors.png"
+            alt="зображення статті"
+            width="200px"
+            class="absolute top-0 right-0 w-full h-full object-cover"
+          />
           <div class="flex flex-col justify-end h-full">
-            <div class="text-white">
+            <div class="text-white relative z-[3]">
               <h3
                 class="text-m font-unbounded mb-3 md:text-[12px] lg:text-[14px] xl:text-[18px]"
               >

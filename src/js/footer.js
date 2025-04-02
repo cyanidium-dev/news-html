@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const links = document.querySelectorAll('.footer-nav-link');
       links.forEach(link => {
         if (window.location.pathname === link.getAttribute('href')) {
-          link.classList.add('text-mint', 'font-semibold');
+          // link.classList.add('text-mint', 'font-semibold');
         }
       });
     })

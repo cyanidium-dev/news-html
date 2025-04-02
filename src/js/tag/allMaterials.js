@@ -1,4 +1,4 @@
-import './interesting';
+import './actual';
 import '../socials';
 
 document.addEventListener('DOMContentLoaded', function () {

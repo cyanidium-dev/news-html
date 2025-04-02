@@ -1,4 +1,4 @@
-import '../tag/interesting';
+import '../tag/actual';
 import '../socials';
 
 document.addEventListener('DOMContentLoaded', function () {

@@ -16,5 +16,6 @@ import './themeTags';
 import './category/mostInteresting';
 import './category/allMaterialsCategory';
 import './category/columnsCategory';
+import './allNews/importantNews';
 
 console.log('Webpack and Tailwind are working!');

@@ -1,25 +1,245 @@
-<header class="text-textColor md:bg-white">
-  <div
-    class="bg-white flex items-center justify-between pt-[59px] pb-[25px] px-4 md:py-9 xl:pr-[53px] xl:pl-14 max-w-[1440px] mx-auto relative z-30"
-  >
-    <!-- Лого -->
-    <div class="text-2xl font-bold">
-      <a href="/">
-        <svg
-          width="203"
-          height="34"
-          class="w-[142px] h-6 xl:w-[203px] xl:h-[34px] text-black"
-        >
-          <use href="static/icons/sprite.svg#logo"></use>
-        </svg>
-      </a>
-    </div>
+<div>
+  <header class="text-textColor md:bg-white">
+    <div
+      class="bg-white flex items-center justify-between pt-[59px] pb-[25px] px-4 md:py-9 xl:pr-[53px] xl:pl-14 max-w-[1440px] mx-auto relative z-30"
+    >
+      <!-- Лого -->
+      <div class="text-2xl font-bold">
+        <a href="/">
+          <svg
+            width="203"
+            height="34"
+            class="w-[142px] h-6 xl:w-[203px] xl:h-[34px] text-black"
+          >
+            <use href="static/icons/sprite.svg#logo"></use>
+          </svg>
+        </a>
+      </div>
 
-    <!-- Навігація desktop -->
-    <nav>
-      <ul class="hidden md:flex gap-3 lg:gap-4 xl:gap-9 text-textColor text-s">
+      <!-- Навігація desktop -->
+      <nav>
+        <ul
+          class="hidden md:flex gap-3 lg:gap-4 xl:gap-9 text-textColor text-s"
+        >
+          <li>
+            <a href="/all-news.html" class="nav-link hover:text-accent"
+              >Всі новини</a
+            >
+          </li>
+          <li>
+            <a href="/updates.html" class="nav-link hover:text-accent"
+              >Оперативно</a
+            >
+          </li>
+          <li>
+            <a href="/details.html" class="nav-link hover:text-accent"
+              >Детально</a
+            >
+          </li>
+          <li>
+            <a href="/category.html" class="nav-link hover:text-accent"
+              >Економіка</a
+            >
+          </li>
+          <li>
+            <a href="/finance" class="nav-link hover:text-accent">Фінанси</a>
+          </li>
+          <li>
+            <a href="/startups" class="nav-link hover:text-accent">Стартапи</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="flex gap-6">
+        <!-- Інпут для пошуку -->
+        <div class="relative flex w-full">
+          <!-- Інпут для пошуку desk -->
+          <input
+            type="text"
+            placeholder="Пошук"
+            class="hidden h-11 md:block md:w-[106px] lg:w-[150px] xl:w-[203px] md:text-[15px] font-medium leading-normal px-3 py-[10px] rounded-lg bg-bg text-black placeholder:hidden placeholder-black placeholder-opacity-100 outline-none"
+          />
+          <!-- Іконка лупи -->
+          <div
+            class="flex items-center md:absolute md:inset-y-0 md:right-0 md:pr-3 cursor-pointer"
+            id="search-icon"
+          >
+            <svg width="32" height="32">
+              <use href="static/icons/sprite.svg#search"></use>
+            </svg>
+          </div>
+        </div>
+        <!-- пошук на моб -->
+        <div
+          id="search-container"
+          class="h-[116px] bg-white absolute z-40 overflow-auto top-0 right-0 w-full transform -translate-y-full transition-transform duration-700 ease-in-out flex justify-between items-center pb-[25px] pt-[59px] px-4 md:hidden"
+        >
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Пошук"
+            class="h-11 text-[15px] font-medium leading-normal px-3 py-[10px] rounded-lg bg-bg text-black placeholder:hidden placeholder-black placeholder-opacity-100 outline-none w-[84%]"
+          />
+          <div class="items-center pr-3 cursor-pointer" id="close-icon">
+            <svg width="24" height="24">
+              <use href="static/icons/sprite.svg#close"></use>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Бургер-меню для мобільних -->
+        <div class="md:hidden flex items-center mr-2">
+          <button
+            type="button"
+            id="burger-icon"
+            class="cursor-pointer relative w-6 h-6 flex flex-col justify-between"
+          >
+            <span
+              class="burger-line w-8 h-1 bg-black transition-all duration-300"
+            ></span>
+            <span
+              class="burger-line w-8 h-1 bg-black transition-all duration-300"
+            ></span>
+            <span
+              class="burger-line w-8 h-1 bg-black transition-all duration-300"
+            ></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Мобільне меню (спочатку приховане) -->
+    <div
+      id="mobile-menu"
+      class="fixed overflow-auto top-0 right-0 w-full h-full bg-white transform -translate-y-full transition-transform duration-700 ease-in-out z-20 mb-10 flex flex-col justify-between gap-10"
+    >
+      <nav class="mt-4">
+        <ul class="w-full text-start text-[20px] font-semibold leading-normal">
+          <li class="py-4 border-b border-b-borders">
+            <a href="/" class="nav-link mx-4 hover:text-accent">Головна</a>
+          </li>
+          <li class="py-4 border-b border-b-borders">
+            <a href="/updates.html" class="nav-link mx-4 hover:text-accent"
+              >Оперативно</a
+            >
+          </li>
+          <li class="py-4 border-b border-b-borders">
+            <a href="/details.html" class="nav-link mx-4 hover:text-accent"
+              >Детально</a
+            >
+          </li>
+          <li class="py-4 border-b border-b-borders">
+            <a href="/category.html" class="nav-link mx-4 hover:text-accent"
+              >Економіка</a
+            >
+          </li>
+          <li class="py-4 border-b border-b-borders">
+            <a href="/finance" class="nav-link mx-4 hover:text-accent"
+              >Фінанси</a
+            >
+          </li>
+          <li class="pt-4">
+            <a href="/startups" class="nav-link mx-4 hover:text-accent"
+              >Стартапи</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- соц мережі -->
+      <ul class="flex justify-center items-center gap-[23px]">
         <li>
-          <a href="/" class="nav-link hover:text-accent">Головна</a>
+          <a
+            href="https://uk-ua.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              width="32"
+              height="32"
+              class="text-accent hover:text-mint transition-colors duration-300"
+            >
+              <use href="static/icons/sprite.svg#facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+            <svg
+              width="32"
+              height="32"
+              class="text-accent hover:text-mint transition-colors duration-300"
+            >
+              <use href="static/icons/sprite.svg#x"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              width="32"
+              height="32"
+              class="text-accent hover:text-mint transition-colors duration-300"
+            >
+              <use href="static/icons/sprite.svg#instagram"></use></svg
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://www.threads.net/?hl=uk"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              width="32"
+              height="32"
+              class="text-accent hover:text-mint transition-colors duration-300"
+            >
+              <use href="static/icons/sprite.svg#threads"></use></svg
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://web.telegram.org/k/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              width="32"
+              height="32"
+              class="text-accent hover:text-mint transition-colors duration-300"
+            >
+              <use href="static/icons/sprite.svg#tg"></use></svg
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://www.viber.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              width="32"
+              height="32"
+              class="text-accent hover:text-mint transition-colors duration-300"
+            >
+              <use href="static/icons/sprite.svg#viber"></use></svg
+          ></a>
+        </li>
+      </ul>
+
+      <section id="theme-tags-mob" class="mx-2 mb-[180px]"></section>
+    </div>
+    <!-- навігація на моб зі скроллом -->
+    <nav class="bg-white w-full overflow-x-auto py-[10px] mb-4 md:hidden">
+      <ul class="flex gap-[10px] text-neutral text-s ml-2 sm:justify-center">
+        <li>
+          <a href="/all-news.html" class="nav-link hover:text-accent"
+            >Всі новини</a
+          >
         </li>
         <li>
           <a href="/updates.html" class="nav-link hover:text-accent"
@@ -44,217 +264,10 @@
         </li>
       </ul>
     </nav>
-
-    <div class="flex gap-6">
-      <!-- Інпут для пошуку -->
-      <div class="relative flex w-full">
-        <!-- Інпут для пошуку desk -->
-        <input
-          type="text"
-          placeholder="Пошук"
-          class="hidden h-11 md:block md:w-[106px] lg:w-[150px] xl:w-[203px] md:text-[15px] font-medium leading-normal px-3 py-[10px] rounded-lg bg-bg text-black placeholder:hidden placeholder-black placeholder-opacity-100 outline-none"
-        />
-        <!-- Іконка лупи -->
-        <div
-          class="flex items-center md:absolute md:inset-y-0 md:right-0 md:pr-3 cursor-pointer"
-          id="search-icon"
-        >
-          <svg width="32" height="32">
-            <use href="static/icons/sprite.svg#search"></use>
-          </svg>
-        </div>
-      </div>
-      <!-- пошук на моб -->
-      <div
-        id="search-container"
-        class="h-[116px] bg-white absolute z-40 overflow-auto top-0 right-0 w-full transform -translate-y-full transition-transform duration-700 ease-in-out flex justify-between items-center pb-[25px] pt-[59px] px-4 md:hidden"
-      >
-        <input
-          id="search-input"
-          type="text"
-          placeholder="Пошук"
-          class="h-11 text-[15px] font-medium leading-normal px-3 py-[10px] rounded-lg bg-bg text-black placeholder:hidden placeholder-black placeholder-opacity-100 outline-none w-[84%]"
-        />
-        <div class="items-center pr-3 cursor-pointer" id="close-icon">
-          <svg width="24" height="24">
-            <use href="static/icons/sprite.svg#close"></use>
-          </svg>
-        </div>
-      </div>
-
-      <!-- Бургер-меню для мобільних -->
-      <div class="md:hidden flex items-center mr-2">
-        <button
-          type="button"
-          id="burger-icon"
-          class="cursor-pointer relative w-6 h-6 flex flex-col justify-between"
-        >
-          <span
-            class="burger-line w-8 h-1 bg-black transition-all duration-300"
-          ></span>
-          <span
-            class="burger-line w-8 h-1 bg-black transition-all duration-300"
-          ></span>
-          <span
-            class="burger-line w-8 h-1 bg-black transition-all duration-300"
-          ></span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <!-- Мобільне меню (спочатку приховане) -->
-  <div
-    id="mobile-menu"
-    class="fixed overflow-auto top-0 right-0 w-full h-full bg-white transform -translate-y-full transition-transform duration-700 ease-in-out z-20 mb-10 flex flex-col justify-between gap-10"
-  >
-    <nav class="mt-4">
-      <ul class="w-full text-start text-[20px] font-semibold leading-normal">
-        <li class="py-4 border-b border-b-borders">
-          <a href="/" class="nav-link mx-4 hover:text-accent">Головна</a>
-        </li>
-        <li class="py-4 border-b border-b-borders">
-          <a href="/updates.html" class="nav-link mx-4 hover:text-accent"
-            >Оперативно</a
-          >
-        </li>
-        <li class="py-4 border-b border-b-borders">
-          <a href="/details.html" class="nav-link mx-4 hover:text-accent"
-            >Детально</a
-          >
-        </li>
-        <li class="py-4 border-b border-b-borders">
-          <a href="/category.html" class="nav-link mx-4 hover:text-accent"
-            >Економіка</a
-          >
-        </li>
-        <li class="py-4 border-b border-b-borders">
-          <a href="/finance" class="nav-link mx-4 hover:text-accent">Фінанси</a>
-        </li>
-        <li class="pt-4">
-          <a href="/startups" class="nav-link mx-4 hover:text-accent"
-            >Стартапи</a
-          >
-        </li>
-      </ul>
-    </nav>
-
-    <!-- соц мережі -->
-    <ul class="flex justify-center items-center gap-[23px]">
-      <li>
-        <a
-          href="https://uk-ua.facebook.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            width="32"
-            height="32"
-            class="text-accent hover:text-mint transition-colors duration-300"
-          >
-            <use href="static/icons/sprite.svg#facebook"></use>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
-          <svg
-            width="32"
-            height="32"
-            class="text-accent hover:text-mint transition-colors duration-300"
-          >
-            <use href="static/icons/sprite.svg#x"></use>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://www.instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            width="32"
-            height="32"
-            class="text-accent hover:text-mint transition-colors duration-300"
-          >
-            <use href="static/icons/sprite.svg#instagram"></use></svg
-        ></a>
-      </li>
-      <li>
-        <a
-          href="https://www.threads.net/?hl=uk"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            width="32"
-            height="32"
-            class="text-accent hover:text-mint transition-colors duration-300"
-          >
-            <use href="static/icons/sprite.svg#threads"></use></svg
-        ></a>
-      </li>
-      <li>
-        <a
-          href="https://web.telegram.org/k/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            width="32"
-            height="32"
-            class="text-accent hover:text-mint transition-colors duration-300"
-          >
-            <use href="static/icons/sprite.svg#tg"></use></svg
-        ></a>
-      </li>
-      <li>
-        <a
-          href="https://www.viber.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            width="32"
-            height="32"
-            class="text-accent hover:text-mint transition-colors duration-300"
-          >
-            <use href="static/icons/sprite.svg#viber"></use></svg
-        ></a>
-      </li>
-    </ul>
-
-    <section id="theme-tags-mob" class="mx-2 mb-[180px]"></section>
-  </div>
-  <hr class="h-[1px] w-full bg-borders" />
-  <!-- навігація на моб зі скроллом -->
-  <nav class="bg-white w-full overflow-x-auto py-[10px] mb-4 md:hidden">
-    <ul class="flex gap-[10px] text-neutral text-s ml-2 sm:justify-center">
-      <li>
-        <a href="/" class="nav-link hover:text-accent">Головна</a>
-      </li>
-      <li>
-        <a href="/updates.html" class="nav-link hover:text-accent"
-          >Оперативно</a
-        >
-      </li>
-      <li>
-        <a href="/details.html" class="nav-link hover:text-accent">Детально</a>
-      </li>
-      <li>
-        <a href="/category.html" class="nav-link hover:text-accent"
-          >Економіка</a
-        >
-      </li>
-      <li>
-        <a href="/finance" class="nav-link hover:text-accent">Фінанси</a>
-      </li>
-      <li>
-        <a href="/startups" class="nav-link hover:text-accent">Стартапи</a>
-      </li>
-    </ul>
-  </nav>
-
+  </header>
   <!-- курс валют -->
-  <div id="exchange-rate"></div>
-</header>
+  <div
+    id="exchange-rate"
+    class="container mt-4 md:mt-6 rounded-lg xl:h-11 flex items-center justify-center"
+  ></div>
+</div>

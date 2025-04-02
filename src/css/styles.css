@@ -5,7 +5,8 @@
 @layer base {
   @font-face {
     font-family: 'Inter';
-    src: url('../static/fonts/Inter-Regular.woff2') format('woff2');
+    src: url('../static/fonts/Inter-Regular.woff2') format('woff2'),
+      url('../static/fonts/Inter-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -13,7 +14,8 @@
 
   @font-face {
     font-family: 'Inter';
-    src: url('../static/fonts/Inter-Medium.woff2') format('woff2');
+    src: url('../static/fonts/Inter-Medium.woff2') format('woff2'),
+      url('../static/fonts/Inter-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -142,4 +144,110 @@ a {
 
 .burger-line {
   transition: all 0.3s ease;
+}
+
+.accent-article {
+  position: relative;
+  overflow: hidden;
+}
+
+.accent-article::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    linear-gradient(178deg, rgba(0, 0, 0, 0.2) 1.42%, rgba(0, 0, 0, 0.5) 78.92%);
+  transition: opacity 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.accent-article:hover::before {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    linear-gradient(178deg, rgba(0, 0, 0, 0) 1.42%, rgba(0, 0, 0, 0.5) 78.92%);
+  opacity: 1;
+}
+
+.editor-article {
+  position: relative;
+  overflow: hidden;
+}
+
+.editor-article::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    linear-gradient(178deg, rgba(0, 0, 0, 0) 1.42%, rgba(0, 0, 0, 0.8) 72.14%);
+  transition: opacity 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.editor-article:hover::before {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    linear-gradient(178deg, rgba(0, 0, 0, 0.2) 1.42%, rgba(0, 0, 0, 0.8) 78.92%);
+  opacity: 1;
+}
+
+.news-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.news-img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  transition: opacity 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+  opacity: 0;
+}
+
+a:hover > .news-img::before {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  opacity: 1;
 }

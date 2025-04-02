@@ -28,7 +28,7 @@
 
         <!-- блок з колонками, останніми новинами та соц мережами -->
         <div class="flex flex-col md:flex-row gap-6">
-          <div class="flex flex-col gap-6 md:w-[66%]">
+          <div class="flex flex-col gap-6 md:w-[66%] md:flex-grow">
             <!-- колонки -->
             <div id="columns"></div>
 
@@ -64,27 +64,28 @@
           <article class="rounded-xl overflow-hidden">
             <a
               href="#"
-              class="h-[363px] p-6 md:h-[496px] rounded-xl flex flex-col justify-center items-center gap-[38px] md:gap-6 text-white hover:scale-[1.05] transition-transform duration-300"
-              style="
-                background: linear-gradient(
-                    178deg,
-                    rgba(0, 0, 0, 0) 1.42%,
-                    rgba(0, 0, 0, 0.8) 72.14%
-                  ),
-                  url('static/images/editors.png') lightgray 50% / cover
-                    no-repeat;
-              "
+              class="accent-article h-[363px] p-6 md:h-[496px] rounded-xl text-white flex justify-center items-center"
             >
-              <p class="text-s xl:text-[20px] leading-[1.2] font-normal">
-                Економіка
-              </p>
-
-              <h3
-                class="text-[22px] md:text-[32px] lg:text-[40px] font-unbounded font-medium leading-[1.4] text-center max-w-[68%]"
+              <img
+                src="/public/static/images/editors.png"
+                alt="зображення статті"
+                width="200px"
+                class="absolute top-0 right-0 w-full h-full object-cover"
+              />
+              <div
+                class="flex flex-col justify-center items-center gap-[38px] md:gap-6 relative z-[3]"
               >
-                Безплатний акселератор з виходу на ринок ЄС для підприємців
-              </h3>
-              <p class="text-[12px] leading-[1.2]">18.02.2025</p>
+                <p class="text-s xl:text-[20px] leading-[1.2] font-normal">
+                  Економіка
+                </p>
+
+                <h3
+                  class="text-[22px] md:text-[32px] lg:text-[40px] font-unbounded font-medium leading-[1.4] text-center max-w-[68%]"
+                >
+                  Безплатний акселератор з виходу на ринок ЄС для підприємців
+                </h3>
+                <p class="text-[12px] leading-[1.2]">18.02.2025</p>
+              </div>
             </a>
           </article>
         </section>
