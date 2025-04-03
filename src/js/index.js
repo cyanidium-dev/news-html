@@ -17,5 +17,14 @@ import './category/mostInteresting';
 import './category/allMaterialsCategory';
 import './category/columnsCategory';
 import './allNews/importantNews';
+import './article/banner';
+import './article/slider';
+import './article/table';
+import './article/accentText';
+import './article/accentWhiteTetx';
+import './article/video';
+import './article/service';
+import './article/recommendations';
+import './article/shared';
 
 console.log('Webpack and Tailwind are working!');
