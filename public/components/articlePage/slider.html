@@ -1,0 +1,82 @@
+<div class="w-full my-12">
+  <!-- Головний слайдер -->
+  <div class="swiper main-slider overflow-hidden">
+    <div class="swiper-wrapper">
+      <div
+        class="swiper-slide h-[206px] sm:h-[350px] md:h-[466px] overflow-hidden"
+      >
+        <img
+          src="../../static/images/photo-news.webp"
+          alt="зображення новини"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div
+        class="swiper-slide h-[206px] sm:h-[350px] md:h-[466px] overflow-hidden"
+      >
+        <img
+          src="../../static/images/article.webp"
+          alt="зображення новини"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div
+        class="swiper-slide h-[206px] sm:h-[350px] md:h-[466px] overflow-hidden"
+      >
+        <img
+          src="../../static/images/editors.png"
+          alt="зображення новини"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+    <!-- Стрілки -->
+    <div
+      class="custom-prev absolute top-1/2 -translate-y-1/2 left-[11px] md:left-[21px] z-10"
+    >
+      <svg width="36" height="36">
+        <use href="../../static/icons/sprite.svg#prev"></use>
+      </svg>
+    </div>
+    <div
+      class="custom-next absolute top-1/2 -translate-y-1/2 right-[11px] md:right-[21px] z-10"
+    >
+      <svg width="36" height="36" class="rotate-180">
+        <use href="../../static/icons/sprite.svg#prev"></use>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Мініатюри -->
+  <div class="swiper thumb-slider mt-4">
+    <div class="swiper-wrapper gap-[10px] justify-center">
+      <div
+        class="swiper-slide cursor-pointer h-[35px] w-[53px] md:h-[53px] overflow-hidden"
+      >
+        <img
+          src="../../static/images/photo-news.webp"
+          alt="зображення новини"
+          class="w-full h-full object-cover hover:opacity-100 transition"
+        />
+      </div>
+      <div
+        class="swiper-slide cursor-pointer h-[35px] md:h-[53px] overflow-hidden"
+      >
+        <img
+          src="../../static/images/article.webp"
+          alt="зображення новини"
+          class="w-full h-full object-cover hover:opacity-100 transition"
+        />
+      </div>
+      <div
+        class="swiper-slide cursor-pointer h-[35px] md:h-[53px] overflow-hidden"
+      >
+        <img
+          src="../../static/images/editors.png"
+          alt="зображення новини"
+          class="w-full h-full object-cover hover:opacity-100 transition"
+        />
+      </div>
+    </div>
+  </div>
+</div>
